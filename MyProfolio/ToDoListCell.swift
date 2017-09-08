@@ -12,7 +12,7 @@ class ToDoListCell: UITableViewCell {
 
     @IBOutlet weak var tableViewCell: UIView!
     
-    @IBOutlet weak var mainLabel: UILabel!
+    @IBOutlet weak var taskLabel: UILabel!
     
     @IBOutlet weak var dueDateLabel: UILabel!
     

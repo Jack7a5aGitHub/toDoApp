@@ -13,11 +13,13 @@ class EntryFormViewController: FormViewController {
     
     
     @IBAction func saveBtn(_ sender: Any) {
-        
+       
+       
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         let task = Form(context: context)
+       
         task.task = taskSubject
-        task.dueDate = date as NSDate
+        task.dueDate = dueDate as Date as NSDate
         task.priority = priority
         task.details = details
         
@@ -25,23 +27,64 @@ class EntryFormViewController: FormViewController {
         // save the data 
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         navigationController!.popViewController(animated: true)
+        
     }
     
+    
     var taskSubject = String()
-    var date = Date()
+    var dueDate = Date()
     var details = String()
     var priority = String()
     
-    override func viewDidLoad() {
+    override func viewWillAppear(_ animated: Bool) {
+   
         super.viewDidLoad()
         
         navigationOptions = RowNavigationOptions.Enabled.union(.StopDisabledRow)
         animateScroll = true
         rowKeyboardSpacing = 20
         // Do any additional setup after loading the view.
-        setupForm()
+        form +++ Section("ABC")
+            <<< TextRow(){
+                
+                $0.title = " Task "
+                $0.placeholder = "e.g Interview"
+                $0.value = taskSubject
+                $0.onChange{[unowned self] row in
+                    self.taskSubject = row.value!
+                }
+             
+                
+        }
+        form +++ Section()
+            <<< DateTimeRow(){
+                
+                $0.title = "Due Date"
+                $0.dateFormatter = type(of: self).dateFormatter
+                $0.minimumDate = Date()
+                $0.value = dueDate
+                $0.onChange({[unowned self] row in
+                    if let date = row.value{
+                        self.dueDate = date
+                        
+                    }})
+            }
+            <<< SegmentedRow<String>() {
+                $0.title = "Priority"
+                $0.options = ["L", "M", "H"]
+                $0.value = priority
+            }
+            +++ Section()
+            <<< TextAreaRow(){
+                $0.placeholder = "Details"
+                $0.value = details
+                
+                
+        }
+
+       
     }
-    
+    /*
     func setupForm(){
         
         form +++ Section("ABC")
@@ -56,12 +99,16 @@ class EntryFormViewController: FormViewController {
         }
         form +++ Section()
             <<< DateTimeRow(){
-                let date = NSDate()
-                let dateFormatter = NSDateFormatter()
-                
+               
                 $0.title = "Due Date"
-                $0.minimumDate = Date(timeIntervalSinceNow: 0)
-                $0.value = date as Date
+                $0.dateFormatter = type(of: self).dateFormatter
+                $0.minimumDate = Date()
+                $0.value = dueDate
+                $0.onChange({[unowned self] row in
+                    if let date = row.value{
+                        self.dueDate = date
+                        
+                    }})
             }
             <<< SegmentedRow<String>() {
                 $0.title = "Priority"
@@ -76,8 +123,14 @@ class EntryFormViewController: FormViewController {
                 
         }
     }
+    */
+  
+   static let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM d yyyy, h mm:a"
+        return formatter
+    }()
     
-    
-    
+ 
     
 }
