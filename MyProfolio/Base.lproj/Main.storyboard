@@ -53,9 +53,12 @@
                                             <outlet property="tableViewCell" destination="xGm-n3-ObK" id="OfV-4C-yen"/>
 <<<<<<< HEAD
                                             <outlet property="taskLabel" destination="M2p-c2-p7T" id="HmB-Xj-VDa"/>
+<<<<<<< HEAD
                                             <segue destination="Rb3-np-B1U" kind="show" identifier="EditSegue" id="RpI-zm-VmF"/>
 =======
 >>>>>>> parent of e97babf... 9/9 update before doing the model
+=======
+>>>>>>> parent of 50afe23... 9/10 updated version
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -126,10 +129,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tNs-2o-2BD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1990" y="179"/>
+            <point key="canvasLocation" x="1472" y="873"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="RpI-zm-VmF"/>
-    </inferredMetricsTieBreakers>
 </document>
