@@ -49,7 +49,7 @@ class ViewController: UIViewController {
             toolBarInEditing.isHidden = false
             
         case false:
-            editButton.title = "Edit"
+            editButton.title = "Delete"
             toolBarInEditing.isHidden = true
         }
         
@@ -83,20 +83,12 @@ class ViewController: UIViewController {
         
     }
     
-<<<<<<< HEAD
 =======
             }
     
     
 
 >>>>>>> parent of e97babf... 9/9 update before doing the model
-=======
-    
-    
-    
-    
-    
->>>>>>> parent of 50afe23... 9/10 updated version
 }
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
@@ -105,7 +97,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         return forms.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
@@ -137,11 +129,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
 <<<<<<< HEAD
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
-        
-        
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        
-        
         
         if editingStyle == .delete {
             
@@ -159,22 +147,60 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         
     }
     
+    /*
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         
-        //if !tableView.isEditing {
-        //performSegue(withIdentifier: "formSegue", sender: self)
-         
-           /*
-            let formViewController = EntryFormViewController()
-             formViewController.taskSubject = forms[indexPath.row].task!
-           print(formViewController.taskSubject)
-           */
+       //if !tableView.isEditing {
             
-           
+         //  let selectedTableCell = tableView.cellForRow(at:indexPath)! as! UITableViewCell;
+          //  performSegue(withIdentifier: "EditSegue", sender: selectedTableCell)
+            
+            //let formViewController = EntryFormViewController()
+           // formViewController.taskSubject = forms[indexPath.row].task!
+          //  print(formViewController.taskSubject)
+            
         
         
     }
+*/
+    override func prepare(for segue: UIStoryboardSegue,sender: Any?){
+       // print("1. after call performSegue will trigger this prepare function first ")
+       // print("2. as jojo has create another segue for edit in storybefore")
+      //  print("3. we just need to identify the segue.identifier to distingish the action of user")
+        super.prepare(for: segue, sender: sender)
+        
+        switch(segue.identifier ?? ""){
+        case "formSegue":
+            print("Adding To-do item")
+            
+        case "EditSegue":
+            print("Editing To-do item")
+            print("The stuff we have to do here is pass the selected table cell to next view")
+
+            
+            guard let entryFormViewController = segue.destination as? EntryFormViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            
+            guard let selectedTableCell = sender as? ToDoListCell else {
+                fatalError("Unexpected sender: ()")
+            }
+            
+            guard let indexPath = tableView.indexPath(for: selectedTableCell) else {
+                fatalError("The selected cell is not being displayed by the table")
+            }
+            
+            let theChosen = forms[indexPath.row]
+            entryFormViewController.theChosen = theChosen
+            print(theChosen)
+            
+        default:
+            print("Unexpected Segue Identifier; \(segue.identifier)")
+        }
+    }
+    
+    
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
@@ -192,17 +218,12 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         
     }
     
-   
     
-<<<<<<< HEAD
     
     
 =======
     
 >>>>>>> parent of e97babf... 9/9 update before doing the model
-=======
-
->>>>>>> parent of 50afe23... 9/10 updated version
 }
 
 
