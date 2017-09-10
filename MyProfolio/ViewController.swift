@@ -8,17 +8,9 @@
 
 import UIKit
 import CoreData
-import Eureka
 
 class ViewController: UIViewController {
-    
-    
-    @IBOutlet weak var editButton: UIBarButtonItem!
-    
-    @IBOutlet weak var toolBarInEditing: UIToolbar!
-    
-    var date = NSDate()
-    
+
     @IBOutlet weak var tableView: UITableView!
     
     @IBAction func addNewToDo(_ sender: Any) {
@@ -34,18 +26,15 @@ class ViewController: UIViewController {
         navigationItem.title = " To-Do-List "
         tableView.delegate = self
         tableView.dataSource = self
-        toolBarInEditing.isHidden = true
-        
-        
-        
+        print(forms)
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         
         getData()
-        
         tableView.reloadData()
         
+<<<<<<< HEAD
     }
     
     @IBAction func editTable(_ sender: Any) {
@@ -94,6 +83,12 @@ class ViewController: UIViewController {
         
     }
     
+=======
+            }
+    
+    
+
+>>>>>>> parent of e97babf... 9/9 update before doing the model
 }
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
@@ -104,33 +99,34 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ToDoListCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
         let form = forms[indexPath.row]
-        let date = form.dueDate
-        let dateString = toString(date: date!)
         
-        cell.taskLabel.text = form.task!
-        cell.dueDateLabel.text = dateString
+        cell.textLabel?.text = form.task
+        
         
         
         return cell
         
     }
     
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60.0
+    }
     
     func getData(){
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
         do{
-            forms = try context.fetch(Form.fetchRequest())
+        forms = try context.fetch(Form.fetchRequest())
         }catch {
             print("Failed to fetch any result")
         }
         
     }
     
+<<<<<<< HEAD
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -225,6 +221,9 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     
     
+=======
+    
+>>>>>>> parent of e97babf... 9/9 update before doing the model
 }
 
 

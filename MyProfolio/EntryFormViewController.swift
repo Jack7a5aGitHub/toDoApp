@@ -14,12 +14,17 @@ class EntryFormViewController: FormViewController {
     
     @IBAction func saveBtn(_ sender: Any) {
         
+<<<<<<< HEAD
         
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         let task = Form(context: context)
         
+=======
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let task = Form(context: context)
+>>>>>>> parent of e97babf... 9/9 update before doing the model
         task.task = taskSubject
-        task.dueDate = dueDate as Date as NSDate
+        task.dueDate = date as NSDate
         task.priority = priority
         task.details = details
         
@@ -27,18 +32,24 @@ class EntryFormViewController: FormViewController {
         // save the data
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         navigationController!.popViewController(animated: true)
-        
     }
     
+<<<<<<< HEAD
     var theChosen  : Form? = nil
+=======
+>>>>>>> parent of e97babf... 9/9 update before doing the model
     var taskSubject = String()
-    var dueDate = Date()
+    var date = Date()
     var details = String()
     var priority = String()
     
+<<<<<<< HEAD
     
     override func viewWillAppear(_ animated: Bool) {
         print("viewWillAppear")
+=======
+    override func viewDidLoad() {
+>>>>>>> parent of e97babf... 9/9 update before doing the model
         super.viewDidLoad()
         
         
@@ -61,9 +72,19 @@ class EntryFormViewController: FormViewController {
         animateScroll = true
         rowKeyboardSpacing = 20
         // Do any additional setup after loading the view.
+<<<<<<< HEAD
         form +++ Section("ABC")
             <<< TextRow(){
                 
+=======
+        setupForm()
+    }
+    
+    func setupForm(){
+        
+        form +++ Section("ABC")
+            <<< TextRow(){
+>>>>>>> parent of e97babf... 9/9 update before doing the model
                 $0.title = " Task "
                 $0.placeholder = "e.g Interview"
                 $0.value = taskSubject
@@ -71,6 +92,7 @@ class EntryFormViewController: FormViewController {
                     self.taskSubject = row.value!
                 }
                 
+<<<<<<< HEAD
                 
         }
         form +++ Section()
@@ -94,6 +116,17 @@ class EntryFormViewController: FormViewController {
                     if let option = row.value{
                         self.priority = option
                     }})
+=======
+        }
+        form +++ Section()
+            <<< DateTimeRow(){
+                let date = NSDate()
+                let dateFormatter = NSDateFormatter()
+                
+                $0.title = "Due Date"
+                $0.minimumDate = Date(timeIntervalSinceNow: 0)
+                $0.value = date as Date
+>>>>>>> parent of e97babf... 9/9 update before doing the model
             }
             +++ Section()
             <<< TextAreaRow(){
@@ -108,6 +141,7 @@ class EntryFormViewController: FormViewController {
         
         
     }
+<<<<<<< HEAD
     /*
      func setupForm(){
      
@@ -156,5 +190,10 @@ class EntryFormViewController: FormViewController {
     }()
     
     
+=======
+    
+    
+    
+>>>>>>> parent of e97babf... 9/9 update before doing the model
     
 }
