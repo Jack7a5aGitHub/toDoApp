@@ -82,6 +82,7 @@
                                             <outlet property="dueDateLabel" destination="AoM-vs-cME" id="WAJ-kW-QJC"/>
                                             <outlet property="tableViewCell" destination="xGm-n3-ObK" id="OfV-4C-yen"/>
                                             <outlet property="taskLabel" destination="M2p-c2-p7T" id="HmB-Xj-VDa"/>
+                                            <segue destination="Rb3-np-B1U" kind="show" identifier="EditSegue" id="RpI-zm-VmF"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -177,7 +178,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tNs-2o-2BD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1472" y="873"/>
+            <point key="canvasLocation" x="1990" y="179"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="RpI-zm-VmF"/>
+    </inferredMetricsTieBreakers>
 </document>
