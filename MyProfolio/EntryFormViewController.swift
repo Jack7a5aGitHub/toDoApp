@@ -14,6 +14,7 @@ class EntryFormViewController: FormViewController {
     
     @IBAction func saveBtn(_ sender: Any) {
 <<<<<<< HEAD
+<<<<<<< HEAD
         
 <<<<<<< HEAD
         
@@ -24,6 +25,13 @@ class EntryFormViewController: FormViewController {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         let task = Form(context: context)
 >>>>>>> parent of e97babf... 9/9 update before doing the model
+=======
+       
+       
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let task = Form(context: context)
+       
+>>>>>>> parent of 50afe23... 9/10 updated version
 =======
        
        
@@ -44,9 +52,13 @@ class EntryFormViewController: FormViewController {
     
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     var theChosen  : Form? = nil
 =======
 >>>>>>> parent of e97babf... 9/9 update before doing the model
+=======
+    
+>>>>>>> parent of 50afe23... 9/10 updated version
 =======
     
 >>>>>>> parent of 50afe23... 9/10 updated version
@@ -57,12 +69,17 @@ class EntryFormViewController: FormViewController {
     
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     
     override func viewWillAppear(_ animated: Bool) {
         print("viewWillAppear")
 =======
     override func viewDidLoad() {
 >>>>>>> parent of e97babf... 9/9 update before doing the model
+=======
+    override func viewWillAppear(_ animated: Bool) {
+   
+>>>>>>> parent of 50afe23... 9/10 updated version
 =======
     override func viewWillAppear(_ animated: Bool) {
    
@@ -93,8 +110,12 @@ class EntryFormViewController: FormViewController {
                     self.taskSubject = row.value!
                 }
 <<<<<<< HEAD
+<<<<<<< HEAD
                 
 <<<<<<< HEAD
+=======
+             
+>>>>>>> parent of 50afe23... 9/10 updated version
 =======
              
 >>>>>>> parent of 50afe23... 9/10 updated version
@@ -118,6 +139,7 @@ class EntryFormViewController: FormViewController {
                 $0.options = ["L", "M", "H"]
                 $0.value = priority
 <<<<<<< HEAD
+<<<<<<< HEAD
                 $0.onChange({[unowned self] row in
                     if let option = row.value{
                         self.priority = option
@@ -133,6 +155,8 @@ class EntryFormViewController: FormViewController {
                 $0.minimumDate = Date(timeIntervalSinceNow: 0)
                 $0.value = date as Date
 >>>>>>> parent of e97babf... 9/9 update before doing the model
+=======
+>>>>>>> parent of 50afe23... 9/10 updated version
 =======
 >>>>>>> parent of 50afe23... 9/10 updated version
             }
@@ -187,6 +211,7 @@ class EntryFormViewController: FormViewController {
     }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     /*
      func setupForm(){
      
@@ -234,11 +259,17 @@ class EntryFormViewController: FormViewController {
   
    static let dateFormatter: DateFormatter = {
 >>>>>>> parent of 50afe23... 9/10 updated version
+=======
+    */
+  
+   static let dateFormatter: DateFormatter = {
+>>>>>>> parent of 50afe23... 9/10 updated version
         let formatter = DateFormatter()
         formatter.dateFormat = "MMM d yyyy, h mm:a"
         return formatter
     }()
     
+<<<<<<< HEAD
 <<<<<<< HEAD
     
 =======
@@ -246,6 +277,9 @@ class EntryFormViewController: FormViewController {
     
     
 >>>>>>> parent of e97babf... 9/9 update before doing the model
+=======
+ 
+>>>>>>> parent of 50afe23... 9/10 updated version
 =======
  
 >>>>>>> parent of 50afe23... 9/10 updated version

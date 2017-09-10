@@ -54,9 +54,12 @@
 <<<<<<< HEAD
                                             <outlet property="taskLabel" destination="M2p-c2-p7T" id="HmB-Xj-VDa"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
                                             <segue destination="Rb3-np-B1U" kind="show" identifier="EditSegue" id="RpI-zm-VmF"/>
 =======
 >>>>>>> parent of e97babf... 9/9 update before doing the model
+=======
+>>>>>>> parent of 50afe23... 9/10 updated version
 =======
 >>>>>>> parent of 50afe23... 9/10 updated version
                                         </connections>

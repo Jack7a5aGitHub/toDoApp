@@ -84,12 +84,20 @@ class ViewController: UIViewController {
     }
     
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             }
     
     
 
 >>>>>>> parent of e97babf... 9/9 update before doing the model
+=======
+    
+    
+    
+    
+    
+>>>>>>> parent of 50afe23... 9/10 updated version
 =======
     
     
@@ -195,11 +203,15 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
    
     
 <<<<<<< HEAD
+<<<<<<< HEAD
     
     
 =======
     
 >>>>>>> parent of e97babf... 9/9 update before doing the model
+=======
+
+>>>>>>> parent of 50afe23... 9/10 updated version
 =======
 
 >>>>>>> parent of 50afe23... 9/10 updated version
